@@ -1,0 +1,10 @@
+[build]
+  # this is the dir that will be published
+  publish = "dist/daily-diaries"
+  # command to setup your SSR environment
+  command = "npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
