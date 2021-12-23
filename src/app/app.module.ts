@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,8 +9,8 @@ import { WalkThroughComponent } from './pages/walk-through/walk-through.componen
 import { QuickStartComponent } from './pages/quick-start/quick-start.component';
 import { AddTaskComponent } from './pages/task/add-task/add-task.component';
 import { ListTaskComponent } from './pages/task/list-task/list-task.component';
-import { MomentModule } from 'ngx-moment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -21,15 +22,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MomentModule.forRoot({
-      relativeTimeThresholdOptions: {
-        'm': 59
-      }
-    })
+    ToastrModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

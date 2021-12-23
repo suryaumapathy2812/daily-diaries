@@ -1,0 +1,29 @@
+<div class="vh-100 container py-4">
+
+    <form [formGroup]="form" (submit)="submitHandler()" class="h-100">
+        <div class="h-100 d-flex flex-column justify-content-end">
+
+            <div class="my-auto">
+
+
+                <img src="./../../../assets/img/user_svg.svg" alt="" class="img-fluid">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control" formControlName="name" placeholder="Eg: John Doe">
+                </div>
+                <div class="mb-3">
+                    <label for="mockUrl" class="form-label">MockAPI</label>
+                    <input type="url" id="mockUrl" class="form-control" formControlName="mockUrl"
+                        placeholder="Eg: https://secret.mockapi.io/:endpoint">
+                </div>
+
+            </div>
+
+            <button class="btn btn-warning d-block w-100"> Log In </button>
+
+        </div>
+    </form>
+
+
+</div>
