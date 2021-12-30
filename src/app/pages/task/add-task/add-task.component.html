@@ -1,16 +1,19 @@
 <div class="container">
 
-    <div class="vh-100 d-flex align-items-end">
+    <div class="vh-100 d-flex align-items-center">
 
         <form [formGroup]="form" (submit)="submitHandler()" class="mb-3">
-            <div class="d-block mb-3">
+            <div class="d-block mb-4">
                 <label for="new_task">
                     <h1 class="display-4 ">
                         Add your task,
                         And we will remember it
                     </h1>
                 </label>
-                <textarea formControlName="task" class="form-control" id="new_task" rows="14"></textarea>
+                <quill-editor [modules]="quillModules" formControlName="task" [format]="'text'"
+                    class="form-control d-block mb-5 p-0 border-0" id="new_task" [theme]="'snow'" style="height: 300px;"
+                    [required]="true"></quill-editor>
+                <!-- <textarea formControlName="task" class="form-control" id="new_task" rows="14"></textarea> -->
             </div>
             <button class="btn btn-warning d-block ms-auto"> Add Task </button>
         </form>

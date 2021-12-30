@@ -19,10 +19,11 @@
             alt="multitasking bro">
     </div>
 
-    <h1 class="display-1 fw-normal">Hi Surya</h1>
+    <h1 class="display-1 fw-normal">Hi {{name}}</h1>
     <p class="lead fw-normal"> Your today's
         <a routerLink="/task/add" class="link-info">Tasks</a>
-        were </p>
+        were
+    </p>
 
     <ul class="list-group mb-4">
         <li *ngFor="let task of taskList | async"
@@ -31,7 +32,10 @@
                 <!-- <h5 class="mb-1">List group item heading</h5> -->
                 <small class="mb-1">{{ getTime(task.createdAt ) | date }} </small>
             </div>
-            <p class="mb-1 lead fw-normal">{{ task.task }}</p>
+            <p class="mb-1 lead fw-normal" style="">{{ task.task }}</p>
+
+            <!-- <quill-view [content]="task.task" format="text" theme="snow"></quill-view> -->
+
         </li>
 
     </ul>

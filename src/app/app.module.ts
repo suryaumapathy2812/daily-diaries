@@ -11,6 +11,7 @@ import { AddTaskComponent } from './pages/task/add-task/add-task.component';
 import { ListTaskComponent } from './pages/task/list-task/list-task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-
+    QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

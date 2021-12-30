@@ -3,6 +3,15 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 
+
+const modules = {
+  toolbar: [
+    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    ['bold', 'italic', 'underline'],        // toggled buttons
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+  ]
+};
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
@@ -12,6 +21,7 @@ import { AppService } from 'src/app/app.service';
 export class AddTaskComponent implements OnInit {
 
   form!: FormGroup;
+  quillModules: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,6 +30,7 @@ export class AddTaskComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.quillModules = modules;
     this.form = this.formBuilder.group({
       task: new FormControl(null, Validators.required),
       name: "Surya",

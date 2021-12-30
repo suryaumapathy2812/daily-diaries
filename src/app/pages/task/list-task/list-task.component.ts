@@ -6,18 +6,25 @@ import { AppService } from 'src/app/app.service';
   selector: 'app-list-task',
   templateUrl: './list-task.component.html',
   styles: [
+    `
+    p {
+      font-family: 'Lato', sans-serif;
+    }
+  `
   ]
 })
 export class ListTaskComponent implements OnInit {
 
   taskList!: Observable<any>;
+  name!: string;
 
   constructor(
     private service: AppService
   ) { }
 
   ngOnInit(): void {
-    this.taskList = this.service.getTaskList()
+    this.name = this.service.getLs("name");
+    this.taskList = this.service.getTaskList();
   }
 
 
