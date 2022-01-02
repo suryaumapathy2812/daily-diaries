@@ -35,13 +35,19 @@ export class AppService {
 
 
   getTaskList() {
-    return this.http.get(this.apiUrl).pipe(
-      map((result: any) => result.filter((task: any) => {
-        const today = new Date().setHours(0, 0, 0, 0);
-        const created_date = new Date(task.createdAt).getTime();
-        return today < created_date;
-      })
-      ));
+    return this.http.get(this.apiUrl)
+      .pipe(
+        map((result: any) => result.filter((task: any) => {
+          const today = new Date().setHours(0, 0, 0, 0);
+          const created_date = new Date(task.createdAt).getTime();
+          return today < created_date;
+        })
+        ));
+  }
+
+
+  getAllTasks() {
+    return this.http.get(this.apiUrl + `?sortBy=createdAt&order=desc`)
   }
 
   setTask(taskObject: any) {

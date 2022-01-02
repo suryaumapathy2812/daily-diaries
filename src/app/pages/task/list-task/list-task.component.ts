@@ -24,7 +24,7 @@ export class ListTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.name = this.service.getLs("name");
-    this.taskList = this.service.getTaskList();
+    this.taskList = this.service.getAllTasks();
   }
 
 
